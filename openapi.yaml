@@ -1,0 +1,83 @@
+openapi: 3.0.4
+info:
+  title: Inflation Rate
+  description: >-
+    Inflation Rate is a tool for retrieving annual inflation rate and CPI data
+    for countries worldwide. It returns the inflation rate, CPI index value, and
+    country details for any year going back to 1960.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/inflation:
+    get:
+      summary: Get Inflation Rate
+      description: >-
+        Get the annual inflation rate and CPI data for a specific country and
+        year.
+      operationId: inflation
+      parameters:
+        - name: country
+          in: query
+          schema:
+            type: string
+          required: true
+          description: ISO 2-letter country code (e.g., US, GB, JP, DE, BR)
+          example: US
+        - name: year
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: The year to retrieve data for. Defaults to the previous year.
+          example: 2023
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  country: US
+                  countryName: United States
+                  year: 2023
+                  inflationRate: 4.12
+                  cpiIndex: 139.81
+                  cpiBaseYear: 2010
+                  lastUpdated: '2026-02-05T04:00:00.000Z'
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
