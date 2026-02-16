@@ -44,7 +44,10 @@ from apiverve_inflationrate.apiClient import InflationAPIClient
 # Initialize the client with your APIVerve API key
 api = InflationAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "year": 2023 }
+query = {
+    "country": "US",
+    "year": 2023
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "country": "US", "year": 2023 }
+query = {
+    "country": "US",
+    "year": 2023
+}
 ```
 
 ###### Simple Request
@@ -126,7 +132,10 @@ from apiverve_inflationrate.apiClient import InflationAPIClient, InflationAPICli
 
 api = InflationAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "year": 2023 }
+query = {
+    "country": "US",
+    "year": 2023
+}
 
 try:
     result = api.execute(query)
@@ -147,7 +156,10 @@ from apiverve_inflationrate.apiClient import InflationAPIClient, InflationAPICli
 
 api = InflationAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "year": 2023 }
+query = {
+    "country": "US",
+    "year": 2023
+}
 
 try:
     result = api.execute(query)
@@ -181,7 +193,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_inflationrate.apiClient import InflationAPIClient, InflationAPIClientError
 
-query = { "country": "US", "year": 2023 }
+query = {
+    "country": "US",
+    "year": 2023
+}
 
 # Using context manager ensures proper cleanup
 with InflationAPIClient("[YOUR_API_KEY]") as api:
@@ -207,7 +222,10 @@ from apiverve_inflationrate.apiClient import InflationAPIClient
 # Enable debug mode
 api = InflationAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "country": "US", "year": 2023 }
+query = {
+    "country": "US",
+    "year": 2023
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -222,8 +240,12 @@ from apiverve_inflationrate.apiClient import InflationAPIClient
 
 api = InflationAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "country": "US",
+    "year": 2023
+}
+
 try:
-    query = { "country": "US", "year": 2023 }
     result = api.execute(query)
     print(result)
 finally:
