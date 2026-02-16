@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/inflation",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Inflation Rate is a tool for retrieving annual inflation rate and CPI data for countries worldwide. It returns the inflation rate, CPI index value, and country details for any year going back to 1960.",
   "main": "index.js",
   "types": "index.d.ts",
