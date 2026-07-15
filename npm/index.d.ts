@@ -4,22 +4,34 @@ declare module '@apiverve/inflation' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface inflationResponse {
     status: string;
     error: string | null;
     data: InflationRateData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface InflationRateData {
-      country:       string;
-      countryName:   string;
-      year:          number;
-      inflationRate: number;
-      cpiIndex:      number;
-      cpiBaseYear:   number;
-      lastUpdated:   Date;
+      country:       null | string;
+      countryName:   null | string;
+      year:          number | null;
+      inflationRate: number | null;
+      cpiIndex:      number | null;
+      cpiBaseYear:   number | null;
+      lastUpdated:   Date | null;
   }
 
   export default class inflationWrapper {
