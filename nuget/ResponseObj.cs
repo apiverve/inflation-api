@@ -25,6 +25,9 @@ namespace APIVerve.API.InflationRate
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,18 +39,30 @@ namespace APIVerve.API.InflationRate
         public string CountryName { get; set; }
 
         [JsonProperty("year")]
-        public long Year { get; set; }
+        public long? Year { get; set; }
 
         [JsonProperty("inflationRate")]
-        public double InflationRate { get; set; }
+        public double? InflationRate { get; set; }
 
         [JsonProperty("cpiIndex")]
-        public double CpiIndex { get; set; }
+        public double? CpiIndex { get; set; }
 
         [JsonProperty("cpiBaseYear")]
-        public long CpiBaseYear { get; set; }
+        public long? CpiBaseYear { get; set; }
 
         [JsonProperty("lastUpdated")]
-        public DateTimeOffset LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
