@@ -191,11 +191,34 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Inflation Rate API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "country": "US",
+    "countryName": "United States",
+    "year": 2023,
+    "inflationRate": 4.12,
+    "cpiIndex": 139.81,
+    "cpiBaseYear": 2010,
+    "lastUpdated": "2026-02-05T04:00:00.000Z"
+  }
 }
 ```
 
