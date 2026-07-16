@@ -20,6 +20,6 @@ namespace APIVerve.API.InflationRate
         /// The year to retrieve data for. Defaults to the previous year.
         /// </summary>
         [JsonProperty("year")]
-        public string Year { get; set; }
+        public int? Year { get; set; }
     }
 }
