@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Inflation Rate
   description: >-
-    Inflation Rate is a tool for retrieving annual inflation rate and CPI data
-    for countries worldwide. It returns the inflation rate, CPI index value, and
-    country details for any year going back to 1960.
+    Inflation Rate reports annual inflation rates and Consumer Price Index (CPI)
+    values for any country by two-letter country code. Outputs include the
+    year-over-year price change percentage, CPI index, and base comparison year,
+    with paid plans supporting historical lookups by year.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/inflation:
     get:
-      summary: Get Inflation Rate
+      summary: Inflation Rate
       description: >-
         Get the annual inflation rate and CPI data for a specific country and
         year.
