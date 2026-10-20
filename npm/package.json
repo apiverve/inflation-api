@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/inflation",
-  "version": "1.2.0",
-  "description": "Inflation Rate is a tool for retrieving annual inflation rate and CPI data for countries worldwide. It returns the inflation rate, CPI index value, and country details for any year going back to 1960.",
+  "version": "1.2.2",
+  "description": "Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "inflation", "inflation rate", "cpi", "consumer price index", "inflation api"
+    "inflation api", "inflation rate api", "api for inflation rates", "cpi api", "inflation data api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/inflation-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/inflation?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/inflation?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
