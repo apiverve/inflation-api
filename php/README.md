@@ -1,6 +1,6 @@
 # Inflation Rate API - PHP Package
 
-Inflation Rate is a tool for retrieving annual inflation rate and CPI data for countries worldwide. It returns the inflation rate, CPI index value, and country details for any year going back to 1960.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
 
 ## Installation
 
@@ -90,11 +90,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/inflation?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/inflation?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/inflation?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/inflation?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/inflation?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/inflation?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
