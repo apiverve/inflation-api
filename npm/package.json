@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/inflation",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.",
   "main": "index.js",
   "types": "index.d.ts",
