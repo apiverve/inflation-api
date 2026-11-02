@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Inflation Rate API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/inflation?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/inflation?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [country] (required) - ISO 2-letter country code (e.g., US, GB, JP, DE, BR) [minLength: 2, maxLength: 2]

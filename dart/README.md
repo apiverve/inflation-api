@@ -1,11 +1,11 @@
 # Inflation Rate API - Dart/Flutter Client
 
-Inflation Rate is a tool for retrieving annual inflation rate and CPI data for countries worldwide. It returns the inflation rate, CPI index value, and country details for any year going back to 1960.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_inflation.svg)](https://pub.dev/packages/apiverve_inflation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [Inflation Rate API](https://apiverve.com/marketplace/inflation?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [Inflation Rate API](https://apiverve.com/marketplace/inflation?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_inflation: ^1.1.14
+  apiverve_inflation: ^1.2.4
 ```
 
 Then run:
@@ -66,12 +66,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [Inflation Rate API](https://apiverve.com/marketplace/inflation?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/inflation](https://docs.apiverve.com/ref/inflation?utm_source=dart&utm_medium=readme)
+- **API Home:** [Inflation Rate API](https://apiverve.com/marketplace/inflation?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/inflation](https://docs.apiverve.com/ref/inflation?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -79,4 +79,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)
