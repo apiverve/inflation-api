@@ -1,6 +1,6 @@
 # [Inflation Rate API](https://apiverve.com/marketplace/inflation?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year. On paid plans, changes&#x3D;true adds the prior year&#x27;s rate and the change from it, plus the 5-year average, high, low and cumulative CPI rise.
 
 The Inflation Rate API provides a simple, reliable way to integrate inflation rate functionality into your applications. Built for developers who need production-ready inflation rate capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,8 @@ The Inflation Rate API provides a simple, reliable way to integrate inflation ra
 async function callInflationRateAPI() {
     try {
         const params = new URLSearchParams({
-            country: 'US'
+            country: 'US',
+            changes: true
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/inflation?${params}`, {
@@ -54,7 +55,7 @@ callInflationRateAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/inflation?country=US" \
+curl -X GET "https://api.apiverve.com/v1/inflation?country=US&changes=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -215,9 +216,17 @@ A real response from the Inflation Rate API:
     "countryName": "United States",
     "year": 2023,
     "inflationRate": 4.12,
-    "cpiIndex": 139.81,
+    "cpiIndex": 139.74,
     "cpiBaseYear": 2010,
-    "lastUpdated": "2026-02-05T04:00:00.000Z"
+    "lastUpdated": "2026-11-06T04:00:00.000Z",
+    "previousYear": 2022,
+    "previousInflationRate": 8,
+    "inflationRateChange": -3.88,
+    "changeDirection": "down",
+    "averageInflationRate5y": 3.97,
+    "highInflationRate5y": 8,
+    "lowInflationRate5y": 1.23,
+    "cpiChange5y": 21.34
   }
 }
 ```
