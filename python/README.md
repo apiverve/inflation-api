@@ -1,7 +1,7 @@
 Inflation Rate API
 ============
 
-Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year. On paid plans, changes=true adds the prior year's rate and the change from it, plus the 5-year average, high, low and cumulative CPI rise.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-inflationrate.svg)](https://pypi.org/project/apiverve-inflationrate/)
@@ -45,7 +45,8 @@ api = InflationAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
@@ -86,7 +87,8 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 ```
 
@@ -111,9 +113,17 @@ print(result)
     "countryName": "United States",
     "year": 2023,
     "inflationRate": 4.12,
-    "cpiIndex": 139.81,
+    "cpiIndex": 139.74,
     "cpiBaseYear": 2010,
-    "lastUpdated": "2026-02-05T04:00:00.000Z"
+    "lastUpdated": "2026-11-06T04:00:00.000Z",
+    "previousYear": 2022,
+    "previousInflationRate": 8,
+    "inflationRateChange": -3.88,
+    "changeDirection": "down",
+    "averageInflationRate5y": 3.97,
+    "highInflationRate5y": 8,
+    "lowInflationRate5y": 1.23,
+    "cpiChange5y": 21.34
   }
 }
 ```
@@ -133,7 +143,8 @@ api = InflationAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
@@ -157,7 +168,8 @@ api = InflationAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
@@ -194,7 +206,8 @@ from apiverve_inflationrate.apiClient import InflationAPIClient, InflationAPICli
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 # Using context manager ensures proper cleanup
@@ -223,7 +236,8 @@ api = InflationAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 # Debug information will be printed to console
@@ -241,7 +255,8 @@ api = InflationAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
