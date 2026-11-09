@@ -1,6 +1,6 @@
 # Inflation Rate API - Ruby Gem
 
-Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year. On paid plans, changes=true adds the prior year's rate and the change from it, plus the 5-year average, high, low and cumulative CPI rise.
 
 ## Installation
 
@@ -37,7 +37,8 @@ client = APIVerve::Inflation::Client.new(api_key: "YOUR_API_KEY")
 # Make a request
 response = client.execute({
   country: "US",
-  year: 2023
+  year: 2023,
+  changes: true
 })
 
 # Print the response
@@ -49,7 +50,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ country: "US", year: 2023 })
+  response = client.execute({ country: "US", year: 2023, changes: true })
   puts response["data"]
 rescue APIVerve::Inflation::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -80,9 +81,17 @@ client = APIVerve::Inflation::Client.new(
     "countryName": "United States",
     "year": 2023,
     "inflationRate": 4.12,
-    "cpiIndex": 139.81,
+    "cpiIndex": 139.74,
     "cpiBaseYear": 2010,
-    "lastUpdated": "2026-02-05T04:00:00.000Z"
+    "lastUpdated": "2026-11-06T04:00:00.000Z",
+    "previousYear": 2022,
+    "previousInflationRate": 8,
+    "inflationRateChange": -3.88,
+    "changeDirection": "down",
+    "averageInflationRate5y": 3.97,
+    "highInflationRate5y": 8,
+    "lowInflationRate5y": 1.23,
+    "cpiChange5y": 21.34
   }
 }
 ```
