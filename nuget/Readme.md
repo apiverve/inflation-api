@@ -1,7 +1,7 @@
 Inflation Rate API
 ============
 
-Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year. On paid plans, changes=true adds the prior year's rate and the change from it, plus the 5-year average, high, low and cumulative CPI rise.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.InflationRate.svg)](https://www.nuget.org/packages/APIVerve.API.InflationRate)
@@ -61,7 +61,8 @@ class Program
 
         var queryOptions = new InflationRateQueryOptions {
             Country = "US",
-            Year = 2023
+            Year = 2023,
+            Changes = true
         };
 
         // Make the API call
@@ -126,7 +127,8 @@ public class Example
 
         var queryOptions = new InflationRateQueryOptions {
             Country = "US",
-            Year = 2023
+            Year = 2023,
+            Changes = true
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -159,7 +161,8 @@ public class Example
 
         var queryOptions = new InflationRateQueryOptions {
             Country = "US",
-            Year = 2023
+            Year = 2023,
+            Changes = true
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -197,7 +200,8 @@ public class Example
 
         var queryOptions = new InflationRateQueryOptions {
             Country = "US",
-            Year = 2023
+            Year = 2023,
+            Changes = true
         };
 
         try
@@ -254,7 +258,8 @@ public class Example
 
         var queryOptions = new InflationRateQueryOptions {
             Country = "US",
-            Year = 2023
+            Year = 2023,
+            Changes = true
         };
 
         try
@@ -296,7 +301,8 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new InflationRateQueryOptions {
     Country = "US",
-    Year = 2023
+    Year = 2023,
+    Changes = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -323,7 +329,8 @@ apiClient.SetLogger(message =>
 
 var queryOptions = new InflationRateQueryOptions {
     Country = "US",
-    Year = 2023
+    Year = 2023,
+    Changes = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -342,7 +349,8 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 
 var queryOptions = new InflationRateQueryOptions {
     Country = "US",
-    Year = 2023
+    Year = 2023,
+    Changes = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -355,7 +363,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 ```csharp
 var queryOptions = new InflationRateQueryOptions {
     Country = "US",
-    Year = 2023
+    Year = 2023,
+    Changes = true
 };
 
 using (var apiClient = new InflationRateAPIClient("[YOUR_API_KEY]"))
@@ -379,9 +388,17 @@ using (var apiClient = new InflationRateAPIClient("[YOUR_API_KEY]"))
     "countryName": "United States",
     "year": 2023,
     "inflationRate": 4.12,
-    "cpiIndex": 139.81,
+    "cpiIndex": 139.74,
     "cpiBaseYear": 2010,
-    "lastUpdated": "2026-02-05T04:00:00.000Z"
+    "lastUpdated": "2026-11-06T04:00:00.000Z",
+    "previousYear": 2022,
+    "previousInflationRate": 8,
+    "inflationRateChange": -3.88,
+    "changeDirection": "down",
+    "averageInflationRate5y": 3.97,
+    "highInflationRate5y": 8,
+    "lowInflationRate5y": 1.23,
+    "cpiChange5y": 21.34
   }
 }
 ```

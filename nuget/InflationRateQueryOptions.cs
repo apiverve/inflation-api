@@ -21,5 +21,11 @@ namespace APIVerve.API.InflationRate
         /// </summary>
         [JsonProperty("year")]
         public int? Year { get; set; }
+
+        /// <summary>
+        /// Include the previous year's rate, the change from it, and the 5-year average, high, low and CPI rise
+        /// </summary>
+        [JsonProperty("changes")]
+        public bool? Changes { get; set; }
     }
 }

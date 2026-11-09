@@ -52,6 +52,30 @@ namespace APIVerve.API.InflationRate
 
         [JsonProperty("lastUpdated")]
         public DateTimeOffset? LastUpdated { get; set; }
+
+        [JsonProperty("previousYear")]
+        public long? PreviousYear { get; set; }
+
+        [JsonProperty("previousInflationRate")]
+        public long? PreviousInflationRate { get; set; }
+
+        [JsonProperty("inflationRateChange")]
+        public double? InflationRateChange { get; set; }
+
+        [JsonProperty("changeDirection")]
+        public string ChangeDirection { get; set; }
+
+        [JsonProperty("averageInflationRate5y")]
+        public double? AverageInflationRate5Y { get; set; }
+
+        [JsonProperty("highInflationRate5y")]
+        public long? HighInflationRate5Y { get; set; }
+
+        [JsonProperty("lowInflationRate5y")]
+        public double? LowInflationRate5Y { get; set; }
+
+        [JsonProperty("cpiChange5y")]
+        public double? CpiChange5Y { get; set; }
     }
 
     public partial class Premium
