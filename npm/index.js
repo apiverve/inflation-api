@@ -30,7 +30,7 @@ class inflationWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/inflation';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"year":{"type":"integer","required":false,"min":1960,"max":2030}};
+        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"year":{"type":"integer","required":false,"min":1960,"max":2030},"changes":{"type":"boolean","required":false,"default":false}};
     }
 
     /**

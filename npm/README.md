@@ -1,6 +1,6 @@
 # Inflation Rate API
 
-Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year. On paid plans, changes=true adds the prior year's rate and the change from it, plus the 5-year average, high, low and cumulative CPI rise.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/inflation.svg)](https://www.npmjs.com/package/@apiverve/inflation)
 
@@ -58,7 +58,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   country: "US",
-  year: 2023
+  year: 2023,
+  changes: false
 };
 
 api.execute(query, function (error, data) {
@@ -79,7 +80,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   country: "US",
-  year: 2023
+  year: 2023,
+  changes: false
 };
 
 api.execute(query)
@@ -101,7 +103,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   country: "US",
-  year: 2023
+  year: 2023,
+  changes: false
 };
 
     try {
@@ -126,9 +129,17 @@ async function makeRequest() {
     "countryName": "United States",
     "year": 2023,
     "inflationRate": 4.12,
-    "cpiIndex": 139.81,
+    "cpiIndex": 139.74,
     "cpiBaseYear": 2010,
-    "lastUpdated": "2026-02-05T04:00:00.000Z"
+    "lastUpdated": "2026-11-06T04:00:00.000Z",
+    "previousYear": 2022,
+    "previousInflationRate": 8,
+    "inflationRateChange": -3.88,
+    "changeDirection": "down",
+    "averageInflationRate5y": 3.97,
+    "highInflationRate5y": 8,
+    "lowInflationRate5y": 1.23,
+    "cpiChange5y": 21.34
   }
 }
 ```

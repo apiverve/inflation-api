@@ -25,13 +25,21 @@ declare module '@apiverve/inflation' {
 
 
   interface InflationRateData {
-      country:       null | string;
-      countryName:   null | string;
-      year:          number | null;
-      inflationRate: number | null;
-      cpiIndex:      number | null;
-      cpiBaseYear:   number | null;
-      lastUpdated:   Date | null;
+      country:                null | string;
+      countryName:            null | string;
+      year:                   number | null;
+      inflationRate:          number | null;
+      cpiIndex:               number | null;
+      cpiBaseYear:            number | null;
+      lastUpdated:            Date | null;
+      previousYear:           number | null;
+      previousInflationRate:  number | null;
+      inflationRateChange:    number | null;
+      changeDirection:        null | string;
+      averageInflationRate5Y: number | null;
+      highInflationRate5Y:    number | null;
+      lowInflationRate5Y:     number | null;
+      cpiChange5Y:            number | null;
   }
 
   export default class inflationWrapper {
