@@ -51,6 +51,7 @@ final _formatPatterns = {
 /// Parameters:
 /// * [country] (required) - ISO 2-letter country code (e.g., US, GB, JP, DE, BR) [minLength: 2, maxLength: 2]
 /// * [year] - The year to retrieve data for. Defaults to the previous year. [min: 1960, max: 2030]
+/// * [changes] - Include the previous year's rate, the change from it, and the 5-year average, high, low and CPI rise
 class InflationClient {
   final String apiKey;
   final String baseUrl;
@@ -60,6 +61,7 @@ class InflationClient {
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'country': ValidationRule(type: 'string', required: true, minLength: 2, maxLength: 2),
     'year': ValidationRule(type: 'integer', required: false, min: 1960, max: 2030),
+    'changes': ValidationRule(type: 'boolean', required: false),
   };
 
   InflationClient(this.apiKey, {

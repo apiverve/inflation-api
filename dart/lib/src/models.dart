@@ -63,6 +63,14 @@ class InflationData {
   num? cpiIndex;
   num? cpiBaseYear;
   String? lastUpdated;
+  num? previousYear;
+  num? previousInflationRate;
+  num? inflationRateChange;
+  String? changeDirection;
+  num? averageInflationRate5y;
+  num? highInflationRate5y;
+  num? lowInflationRate5y;
+  num? cpiChange5y;
 
   InflationData({
     this.country,
@@ -72,6 +80,14 @@ class InflationData {
     this.cpiIndex,
     this.cpiBaseYear,
     this.lastUpdated,
+    this.previousYear,
+    this.previousInflationRate,
+    this.inflationRateChange,
+    this.changeDirection,
+    this.averageInflationRate5y,
+    this.highInflationRate5y,
+    this.lowInflationRate5y,
+    this.cpiChange5y,
   });
 
   factory InflationData.fromJson(Map<String, dynamic> json) => InflationData(
@@ -82,20 +98,31 @@ class InflationData {
       cpiIndex: json['cpiIndex'],
       cpiBaseYear: json['cpiBaseYear'],
       lastUpdated: json['lastUpdated'],
+      previousYear: json['previousYear'],
+      previousInflationRate: json['previousInflationRate'],
+      inflationRateChange: json['inflationRateChange'],
+      changeDirection: json['changeDirection'],
+      averageInflationRate5y: json['averageInflationRate5y'],
+      highInflationRate5y: json['highInflationRate5y'],
+      lowInflationRate5y: json['lowInflationRate5y'],
+      cpiChange5y: json['cpiChange5y'],
     );
 }
 
 class InflationRequest {
   String country;
   int? year;
+  bool? changes;
 
   InflationRequest({
     required this.country,
     this.year,
+    this.changes,
   });
 
   Map<String, dynamic> toJson() => {
       'country': country,
       if (year != null) 'year': year,
+      if (changes != null) 'changes': changes,
     };
 }

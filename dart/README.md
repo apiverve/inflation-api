@@ -1,6 +1,6 @@
 # Inflation Rate API - Dart/Flutter Client
 
-Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year.
+Inflation Rate reports annual inflation rates and Consumer Price Index (CPI) values for any country by two-letter country code. Outputs include the year-over-year price change percentage, CPI index, and base comparison year, with paid plans supporting historical lookups by year. On paid plans, changes=true adds the prior year's rate and the change from it, plus the 5-year average, high, low and cumulative CPI rise.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_inflation.svg)](https://pub.dev/packages/apiverve_inflation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_inflation: ^1.2.4
+  apiverve_inflation: ^1.2.5
 ```
 
 Then run:
@@ -35,7 +35,8 @@ void main() async {
   try {
     final response = await client.execute({
       'country': 'US',
-      'year': 2023
+      'year': 2023,
+      'changes': true
     });
 
     print('Status: ${response.status}');
@@ -57,9 +58,17 @@ void main() async {
     "countryName": "United States",
     "year": 2023,
     "inflationRate": 4.12,
-    "cpiIndex": 139.81,
+    "cpiIndex": 139.74,
     "cpiBaseYear": 2010,
-    "lastUpdated": "2026-02-05T04:00:00.000Z"
+    "lastUpdated": "2026-11-06T04:00:00.000Z",
+    "previousYear": 2022,
+    "previousInflationRate": 8,
+    "inflationRateChange": -3.88,
+    "changeDirection": "down",
+    "averageInflationRate5y": 3.97,
+    "highInflationRate5y": 8,
+    "lowInflationRate5y": 1.23,
+    "cpiChange5y": 21.34
   }
 }
 ```
