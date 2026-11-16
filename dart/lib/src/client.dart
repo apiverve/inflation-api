@@ -50,7 +50,7 @@ final _formatPatterns = {
 ///
 /// Parameters:
 /// * [country] (required) - ISO 2-letter country code (e.g., US, GB, JP, DE, BR) [minLength: 2, maxLength: 2]
-/// * [year] - The year to retrieve data for. Defaults to the previous year. [min: 1960, max: 2030]
+/// * [year] - The year to retrieve data for. Defaults to the most recent year with published data for that country (usually one to two years behind). [min: 1960, max: 2030]
 /// * [changes] - Include the previous year's rate, the change from it, and the 5-year average, high, low and CPI rise
 class InflationClient {
   final String apiKey;
