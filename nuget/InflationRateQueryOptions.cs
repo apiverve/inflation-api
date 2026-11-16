@@ -17,7 +17,7 @@ namespace APIVerve.API.InflationRate
         public string Country { get; set; }
 
         /// <summary>
-        /// The year to retrieve data for. Defaults to the previous year.
+        /// The year to retrieve data for. Defaults to the most recent year with published data for that country (usually one to two years behind).
         /// </summary>
         [JsonProperty("year")]
         public int? Year { get; set; }
