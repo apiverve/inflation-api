@@ -41,7 +41,9 @@ paths:
           schema:
             type: integer
           required: false
-          description: The year to retrieve data for. Defaults to the previous year.
+          description: >-
+            The year to retrieve data for. Defaults to the most recent year with
+            published data for that country (usually one to two years behind).
           example: 2023
         - name: changes
           in: query
